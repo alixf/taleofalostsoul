@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<meta title="LudumDare27" package="com.eolhing.ludumdare27" version="1.0.0" company="eolhing" />
+	<app main="Game" path="Export" file="LudumDare27" />
+	<window width="1280" height="720" fps="60" fullscreen="false" resizable="false" />
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	<assets path="Assets" rename="assets" exclude="openfl.svg" />
+	<icon path="Assets/openfl.svg" />
+</project>
