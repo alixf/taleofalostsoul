@@ -5,6 +5,7 @@ import openfl.Assets;
 import motion.Actuate;
 import flash.Lib;
 import flash.events.MouseEvent;
+import flash.events.KeyboardEvent;
 import flash.geom.Point;
 
 class Intro extends Sprite
@@ -41,6 +42,7 @@ class Intro extends Sprite
 
 		Lib.current.stage.addEventListener(MouseEvent.MOUSE_MOVE, mouseMove);
 		Lib.current.stage.addEventListener(MouseEvent.CLICK , mouseClick);
+		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		hover = false;
 	}
 
@@ -84,6 +86,19 @@ class Intro extends Sprite
 				Actuate.tween(soulHover, 0.5, {alpha : 0});
 				Actuate.tween(title, 0.5, {alpha : 0});
 				Actuate.tween(titleHover, 0.5, {alpha : 0});
+			}
+		}
+	}
+
+	public function keyDown(event : KeyboardEvent)
+	{
+		if(event.charCode != 32)
+		{
+			if(onExit != null)
+			{
+				var tmp = onExit;
+				onExit = null;
+				tmp();
 			}
 		}
 	}
